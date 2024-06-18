@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Dekho</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<div class="home">
+<!-- Search Container -->
+<div class="container my-4"> 
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-favorite me-md-2" type="button" (click)="getUserFavMovies()">Get My Movies</button>
+  </div>
+
+  <br>
+
+  <div class="search-container card p-3">
+    <h3 class="card-title">Search Movies</h3>
+    <div class="row">
+      <div class="col-md-6">
+        <input
+          type="text"
+          class="form-control text-dark"
+          placeholder="Search by title"
+          [(ngModel)]="searchTitle"
+        />
+      </div>
+      <div class="col-md-6">
+        <input
+          type="text"
+          class="form-control text-dark"
+          placeholder="Search by actors"
+          [(ngModel)]="searchActors"
+        />
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-6">
+        <input
+          type="number"
+          class="form-control text-dark"
+          placeholder="Year of release"
+          [(ngModel)]="searchYear"
+        />
+      </div>
+      <div class="col-md-6 text-center">
+        <button
+          class="btn btn-outline-primary w-100"
+          (click)="searchMovies()">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Dashboard Grid -->
+  <div class="dashboard-grid">
+    <!-- Display search results -->
+    <div
+      class="card"
+      *ngFor="let movie of movies"
+      (click)="playMovie(movie.title)"
+    >
+      <img
+        src="{{movie.moviePoster}}"
+        class="card-img-top"
+        alt="{{ movie.title }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p>Rating: {{ movie.rating }}</p>
+        <p>Genre: {{ movie.genre }}</p>
+        <small class="text-muted">Release date: {{ movie.yearOfRelease }}</small>
+      </div>
+     <!--  <div class="card-body">
+        <button
+        *ngIf="isFavoriteMovies"
+          class="btn btn-outline-info"
+          (click)="addFavorite(movie.title); $event.stopPropagation();" >
+         Add to Favorite
+        </button>
+      </div> -->
+      <!-- <div class="card-body">
+        <i class="fas fa-heart" *ngIf= "isFavoriteMovies" (click)="addFavorite(movie.title); $event.stopPropagation();"></i>
+    </div> -->
+    <!-- <div class="card-body">
+      <i class="fas fa-heart" 
+      
+      *ngIf="isFavoriteMovies" 
+      (click)="toggleFavorite(movie, $event); $event.stopPropagation();">
+      </i>
+    </div> -->
+    <div class="card-body" *ngIf="!movie.favoriteMovie" >
+    <svg xmlns="http://www.w3.org/2000/svg" (click)="selectFav(movie.title, 'add', $event);  $event.stopPropagation();"
+    width="24"
+    height="24" fill="currentColor" class="bi bi-heart-fill" style="cursor: pointer;" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+    </svg>
+    </div>
+    <div class="card-body" *ngIf="movie.favoriteMovie" >
+      <svg xmlns="http://www.w3.org/2000/svg" (click)="selectFav( movie.title, 'remove', $event); $event.stopPropagation(); "
+      width="24"
+      height="24" fill="currentColor" class="bi bi-heart-fill text-danger" style="cursor: pointer;" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+      </svg>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand mx-auto" href="/home">Movie Dekho</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngIf="loggedIn && loggedInAndIsUser">
+          <a class="nav-link" href="/user-dashboard">My Dashboard</a>
+        </li>
+        <li class="nav-item" *ngIf="loggedIn && !loggedInAndIsUser">
+          <a class="nav-link" href="/admin-dashboard">My Dashboard</a>
+        </li>
+        <li class="nav-item" *ngIf="!loggedIn">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item" *ngIf="!loggedIn">
+          <a class="nav-link" href="/register">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="updateProfile()">Update Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="validateSubscribe()">Subscribe</a>
+        </li> 
+      </ul>
+      <div class="d-flex">
+        <button
+          class="btn btn-outline-danger btn-sm me-2" 
+          *ngIf="loggedIn" 
+          (click)="Back()">
+          Back
+        </button>
+        <button
+          class="btn btn-outline-danger btn-sm" 
+          *ngIf="loggedIn" 
+          (click)="logout()">
+          Log Out
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

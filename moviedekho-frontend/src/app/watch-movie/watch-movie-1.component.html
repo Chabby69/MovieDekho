@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Movie Dekho</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+
+<body>
+<!-- Navigation -->
+<nav class="container-fluid">
+    <ul>
+        <li><strong>{{ movieDetails?.title }}</strong></li>
+    </ul>
+</nav>
+
+<!-- Main content -->
+<main class="container" style="padding-top: 20px;">
+    <div class="grid">
+        <section style="background-color: #f7f7f7; padding: 20px; border-radius: 10px;">
+            <hgroup>
+                <h2>Stream Your Favorite Movies</h2>
+                <h3>Watch with just one click</h3>
+            </hgroup>
+            <p>Enjoy streaming the latest movies with high quality and easy access.</p>
+            <figure style="text-align: center;">
+                <!-- Blank screen with play button -->
+                <div style="position: relative; display: inline-block;">
+                    <!-- Blank screen background -->
+                    <img src="{{ movieDetails?.moviePoster }}" alt="Blank Screen" style="width: 100%; border-radius: 10px;">
+                    <!-- Play button overlay -->
+                    <a href="{{ movieDetails?.streamLink }}" target="_blank" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 50%;">
+                        <img src="https://cdn-icons-png.flaticon.com/512/64/64595.png" alt="Play Button" style="width: 40px; height: 40px;">
+                    </a>
+                </div>
+                <figcaption><a href="{{ movieDetails?.streamLink }}" target="_blank">Stream Now</a></figcaption>
+            </figure>
+            <h3>High-Quality Streaming</h3>
+            <p>Experience movies in high definition with no interruptions.</p>
+            <h3>Access Anytime</h3>
+            <p>Stream from any device, anywhere, at any time.</p>
+        </section>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="container">
+    <small><a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a></small>
+</footer>
+</body>
+</html>

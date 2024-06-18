@@ -1,0 +1,71 @@
+<!-- <div class="body">
+<div class="container my-4"> 
+  <div class="row">
+    <h2 class="text-center movie-collection-header">Movie Collection</h2>
+    
+    <div *ngIf="movies.length === 0" class="col-12 text-center">
+      <p>No movies found.</p>
+    </div>
+
+    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let movie of movies">
+      <div class="card movie-card mb-4" (click)="playMovie(movie.title)" style="cursor: pointer;">
+        <img
+          src="{{movie.moviePoster}}"
+          class="card-img-top"
+          alt="{{ movie.title }} poster"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{movie?.title}}</h5>
+          <p class="card-text">
+            Rating: {{movie?.rating}}
+          </p>
+          <p class="card-text">
+            Genre: {{ movie?.genre }}
+          </p>
+          <p class="card-text">
+            <small class="text-muted">Release date: {{ movie.yearOfRelease }}</small>
+          </p>
+          <p class="card-text" href="streaminlink to watch movie">
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div> -->
+
+<!--https://m.media-amazon.com/images/I/61qHVnmegzL._AC_SY879_.jpg-->
+
+<div class="body">
+  <div class="container my-4">
+    <h2 class="text-center movie-collection-header">Movie Collection</h2>
+
+    <div *ngIf="movies.length === 0" class="col-12 text-center">
+      <p>No movies found.</p>
+    </div>
+
+    <div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item" *ngFor="let movie of movies; let i = index" [ngClass]="{'active': i === 0}">
+          <div class="d-flex justify-content-center" (click)="playMovie(movie.title)">
+            <img [src]="movie.moviePoster" class="d-block w-50" alt="{{ movie.title }} poster">
+          </div>
+          <!-- <div class="carousel-caption d-none d-md-block">
+            <h5>{{ movie.title }}</h5>
+            <p>Rating: {{ movie.rating }}</p>
+            <p>Genre: {{ movie.genre }}</p>
+            <p><small class="text-muted">Release date: {{ movie.yearOfRelease }}</small></p>
+          </div> -->
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>

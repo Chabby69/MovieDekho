@@ -1,0 +1,32 @@
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2196f3 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+  }
+  
+  .navbar {
+    background-color: #d0c527;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #4f91bc !important;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #007bff !important;
+  }
+  
+  .d-flex .btn-outline-danger {
+    color: #406dba;
+    border-color: #2e6db0;
+  }
+  
+  .d-flex .btn-outline-danger:hover {
+    background-color: #2e6db0;
+    color: #406dba;
+  }
+  

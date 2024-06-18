@@ -1,0 +1,15 @@
+/* Path in your Angular project might be src/assets/background-image.webp */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+  }
+  
+  body {
+    background-image: url('/assets/background-image.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: fit;
+  }
+  

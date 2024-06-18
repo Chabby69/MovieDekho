@@ -1,0 +1,96 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.form-container {
+  width: 100%; /* Use 100% of the container width */
+  max-width: 600px; /* Maximum width of the form */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: adds shadow for better focus */
+  background-color: white; /* Optional: changes background color */
+  border-radius: 8px; /* Optional: rounds corners */
+}
+
+.body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  background: url('/assets/background-image.webp') no-repeat center center; 
+  background-size: cover;
+  border-radius: 20px;
+  
+}
+
+
+.container {
+  position: relative;
+  padding: 70px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.inputBox {
+  position: relative;
+  margin-bottom: 25px; /* More space between inputs */
+}
+
+.inputBox input,
+.inputBox select {
+  width: 100%;
+  padding: 12px; /* More padding inside inputs */
+  border: 2px solid #ccc; /* Slightly thicker border */
+  border-radius: 8px; /* More rounded borders */
+  outline: none;
+  font-size: 16px; /* Larger font size for readability */
+}
+
+.inputBox input:focus,
+.inputBox select:focus {
+  border-color: #007BFF; /* Blue focus color */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); /* Subtle focus shadow */
+}
+
+.inputBox span {
+  position: absolute;
+  left: 15px;
+  top: -10px;
+  background: #fff;
+  padding: 0 10px;
+  color: #666;
+  transition: all 0.3s;
+  font-size: 14px; /* Larger label font size */
+}
+
+.inputBox input:valid + span,
+.inputBox select:valid + span {
+  color: #4CAF50; /* Green for valid input confirmation */
+}
+
+input[type="submit"] {
+  background: #007BFF; /* Consistent blue background */
+  color: white;
+  padding: 12px 25px; /* More padding for better clickability */
+  border-radius: 8px; /* Rounded borders for buttons */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+input[type="submit"]:hover {
+  background: #0056b3; /* Darker blue on hover */
+}
+
+.has-error input,
+.has-error select {
+  border-color: red; /* Error indication */
+}
+
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+  position: absolute;
+  bottom: -25px; /* Adjusted positioning for error message */
+  left: 0;
+  width: 100%;
+}

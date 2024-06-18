@@ -1,0 +1,71 @@
+/* Styling for the Movie Collection header */
+.movie-collection-header {
+    font-size: 2rem;
+    color: #2196f3;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for the grid layout */
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .container {
+    position: relative;
+    padding: 70px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    background: url('/assets/background-image.webp') no-repeat center center; 
+    background-size: cover;
+    border-radius: 20px;
+  }
+
+  .body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    
+  }
+  /* Styling for individual movie cards */
+  .movie-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  
+  .movie-card img {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .movie-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  .movie-card .card-body {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .movie-card .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .movie-card .card-text {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .movie-card .card-text small {
+    color: #888;
+  }
+  

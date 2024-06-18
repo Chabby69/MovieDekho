@@ -1,0 +1,69 @@
+<div class="body"> <!-- Main Container with background -->
+    <div class="container form-container"> <!-- Form Container -->
+      <h4>Update Profile &gt; Movie Dekho</h4> <!-- Form Header -->
+  
+        <!-- Email Field -->
+        <div class="">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            [(ngModel)] = "email"
+            
+          />
+        </div>
+        
+        
+        <!-- Additional Information -->
+        <div class="">
+          <label for="gender">Gender</label>
+          <select [(ngModel)]= "gender" 
+        class="form-control">
+          <option value="Male">MALE</option>
+          <option value="Female">FEMALE</option>
+          </select>
+        </div>
+        
+  
+        <div class="">
+          <label for="dob">Date of Birth</label>
+          <input type="date" 
+          id="dateOfBirth"
+          [(ngModel)]= "dob" 
+          class="form-control"
+          />
+        </div>
+
+
+  
+        <div class="">
+          <label for="mobile">Mobile Number</label>
+          <input
+            type="text"
+            id="mobile"
+            class="form-control"
+            [(ngModel)]= "mobile"
+            placeholder="Enter your mobile number"
+            
+          />
+        </div>
+  
+        <div class="">
+          <label for="country">Country</label>
+          <input
+            type="text"
+            id="country"
+            class="form-control"
+          [(ngModel)]= "country"
+            placeholder="Your country"
+            
+          />
+        </div>
+  
+        <div class="my-3 justify-content-center mx-auto">
+          <button  class="btn btn-primary justify-content-center mx-auto" type="submit" value="Update Profile"  (click)="onUpdateProfile()" >Update Profile</button>
+        </div>
+    </div> 
+  </div> 
+  

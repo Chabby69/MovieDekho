@@ -1,0 +1,80 @@
+
+<div class="body">
+    <div class="container form-container">
+      <div class="display-flex justify-content-space-around align-items-center min-height-100vh"> 
+        <form [formGroup]="updateMovieForm" (ngSubmit)="onSubmit()">
+          <h4 >Update Movie Details</h4>
+          <label>Actors</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="actors"
+              placeholder="actors"
+              required
+            />
+          </div>
+          <label>Release Date</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="yearOfRelease"
+              placeholder="Release Date"
+              required
+             
+            /> 
+          </div>
+          <label>Genre</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="genre"
+              placeholder="Genre"
+              required
+            /> 
+          </div>
+
+          <label>Rating</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="rating"
+              placeholder="Rating"
+              required
+            /> 
+          </div>
+
+          <label>Movie Streaming Link</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="streamLink"
+              placeholder="Movie Streaming Link"
+              required
+            /> 
+          </div>
+  
+          <label>Movie Poster Link</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="moviePoster"
+              placeholder="Movie Poster Link"
+              required
+            /> 
+          </div>
+          
+          <label>Upload Movie File (MP4)</label>
+          <div class="inputBox">
+            <input type="file" 
+            (change)="onFileChange($event)" 
+            accept=".mp4"
+            required />
+          </div>
+
+          <div class="inputBox">
+            <input type="submit" value="Update Movie" [disabled]="!updateMovieForm.valid" />
+          </div>
+        </form>
+      </div>
+    </div> 
+  </div> 

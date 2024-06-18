@@ -1,0 +1,93 @@
+<!--@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); -->
+<div class="body"> <!-- Outer body with gradient background -->
+  <div class="container form-container"> <!-- Main form container -->
+      <h4>Add Movie Details</h4>
+      <div class="display-flex justify-content-space-around align-items-center min-height-100vh"> <!-- Align and justify -->
+        <form [formGroup]="addMovieForm" (ngSubmit)="onSubmit()"> <!-- Reactive form -->
+          <label>Movie Title</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="title"
+              placeholder="Movie Title"
+              required
+            />
+          </div>
+  
+          <label>Actors</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="actors"
+              placeholder="actors"
+              required
+            />
+          </div>
+          <label>Release Date</label>
+          <div class="inputBox">
+            <input
+              type="number"
+              formControlName="yearOfRelease"
+              placeholder="Release Date"
+              required
+             
+            /> 
+          </div>
+          <label>Genre</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="genre"
+              placeholder="Genre"
+              required
+            /> 
+          </div>
+
+          <label>Rating</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="rating"
+              placeholder="Rating"
+              required
+            /> 
+          </div>
+
+          <label>Movie Streaming Link</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="streamLink"
+              placeholder="Movie Streaming Link"
+              
+            /> 
+          </div>
+  
+
+          <label>Movie Poster Link</label>
+          <div class="inputBox">
+            <input
+              type="text"
+              formControlName="moviePoster"
+              placeholder="Movie Poster Link"
+              required
+            /> 
+          </div>
+          
+          <label>Upload Movie File (MP4)</label>
+          <div class="inputBox">
+            
+            <input type="file" 
+            (change)="onFileChange($event)" 
+            accept=".mp4"
+            required />
+          </div>
+          
+  
+          <div class="inputBox">
+            <input type="submit" value="Add Movie" [disabled]="!addMovieForm.valid" /> <!-- Submit button -->
+          </div>
+        </form>
+      </div>
+    </div> 
+  </div> 

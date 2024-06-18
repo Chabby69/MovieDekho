@@ -1,0 +1,89 @@
+
+
+ * {
+  font-family: 'Poppins', sans-serif;
+}
+
+.form-container {
+  width: 100%; /* Use 100% of the container width */
+  max-width: 600px; /* Maximum width of the form */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: adds shadow for better focus */
+  background-color: white; /* Optional: changes background color */
+  border-radius: 8px; /* Optional: rounds corners */
+}
+
+.body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+
+  background: url('/assets/background-image.webp') no-repeat center center; 
+  background-size: cover;
+}
+
+.container {
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.inputBox {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.inputBox input, .inputBox select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.inputBox input:focus, .inputBox select:focus {
+  border-color: #e91e63;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 10px;
+  top: -6px;
+  background: #fff;
+  padding: 0 5px;
+  color: #666;
+  transition: all 0.3s;
+}
+
+.inputBox input:valid + span, .inputBox select:valid + span {
+  color: #2196f3;
+  font-size: 12px;
+}
+
+input[type="submit"] {
+  background: #2196f3;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background: #e91e63;
+}
+
+.has-error input, .has-error select {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+}

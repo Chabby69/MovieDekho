@@ -1,0 +1,49 @@
+.movie-collection-header {
+  font-size: 2rem;
+  color: #2196f3;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  transition: transform 0.5s ease;
+}
+
+.carousel-item img {
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  max-height: 1000px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.body {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  background-color: revert-layer;
+  background: revert-layer;
+}
+
+.container {
+  position: relative;
+  padding: 70px;
+  background: url('/assets/background-image.webp') no-repeat center center; 
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}

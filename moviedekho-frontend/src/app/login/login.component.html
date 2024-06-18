@@ -1,0 +1,51 @@
+<!--@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");-->
+<div class="body card"> 
+  <div class="container"> 
+    <h4>Movie Dekho > Login</h4>
+    <div class="">
+      <input
+        type="text"
+        placeholder="Username"
+        [(ngModel)] = "userName"
+        class="form-control"
+      />
+      <div class="text-danger">
+        <div *ngIf = "userNameError" >
+          Username is required
+        </div>
+      </div>
+    </div>
+    <br/>
+    <br/>
+  
+    <div class="" >
+      <input
+        id="password"
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        #pwd
+        [(ngModel)] = "password"
+      />
+      <div class="text-danger">
+        <div *ngIf = "passwordError" >
+          password is required
+        </div>
+        <div *ngIf = "passwordPatternError" >
+          Password must contain at least one number, one uppercase and a
+          lowercase letter and at least 8 characters<br />Password cannot
+          contain whitespace
+        </div>
+      </div>
+    </div>
+  
+    <div class="my-3 justify-content-center mx-auto">
+      <button  class="btn btn-primary justify-content-center mx-auto" type="submit" (click)="onSubmit()" >Login</button>
+    </div>
+    
+    <div class="already">
+      Don't have an account? <a href="/register">Register here</a>
+    </div>
+  </div>
+</div>
+
